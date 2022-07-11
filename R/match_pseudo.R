@@ -9,6 +9,8 @@
 #' @export
 #'
 #' @examples
-xs <- function(x){
-  x^3
+match_pseudo <- function(input_matrix, ref_matrix = NULL, standardize, species = "mouse"){
+  if (is.null(ref_matrix)){
+
+  }
 }
