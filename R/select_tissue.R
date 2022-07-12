@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-select_tissue <- function(input_matrix, standardize, species){
+select_tissue <- function(input_matrix, standardize, species, gene_id_type){
   #need to document this dataset
 
   #import the pseudobulk of 56 reference trajectories
@@ -16,5 +16,8 @@ select_tissue <- function(input_matrix, standardize, species){
   m2.rawsum <- Matrix::rowSums(m2)
   m2.normsum <- c(m2.rawsum) / sum(m2.rawsum) * 1e6
   m2.normsum[which(m2.normsum != 0)] <- log2(m2.normsum[which(m2.normsum != 0)] + 1)
+
+  #select common genes between testing and referencing matrix
+  input.gene.name <- rownames(m2)
 
 }
